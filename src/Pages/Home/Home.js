@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Form from '../../Components/Form'
 import Header from '../../Components/Header'
 import classes from './Home.module.scss'
 
 export const Home = () => {
+  const [leaderboard, setLeaderboard] = useState([])
   return (
     <div>
       {/* 
@@ -13,7 +14,7 @@ export const Home = () => {
     
     */}
       <Header />
-      <Form />
+      <Form leaderboard={leaderboard} setLeaderboard={setLeaderboard} />
     </div>
   )
 }
