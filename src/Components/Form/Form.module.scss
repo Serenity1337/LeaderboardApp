@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0px 0px 0px;
+  .objWeight {
+    height: 30px;
+  }
+  .planet {
+    height: 36px;
+    margin: 0px 5px;
+  }
+  .submitWeightBtn {
+    height: 36px;
+    background-color: grey;
+    color: #fff;
+    width: 120px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
