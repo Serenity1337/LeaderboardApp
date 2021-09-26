@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import ErrorCard from '../ErrorCard'
 import AnswerCard from '../Leaderboard'
 import classes from './Form.module.scss'
+import dateFormat from 'dateformat'
 export const Form = (props) => {
+  let now = new Date()
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
     country: '',
     points: null,
+    date: '',
     errors: '',
   })
   const [error, seterror] = useState('')
@@ -28,8 +31,12 @@ export const Form = (props) => {
       valuesCopy.errors = 'All fields are required.'
       setValues(valuesCopy)
     } else {
+      let currDate = dateFormat(now, 'mm/dd/yyyy hh:MM TT')
       const valuesCopy = { ...values }
       const profile = { ...values }
+      profile.date = currDate
+      let pointsCopy = Number(profile.points)
+      profile.points = pointsCopy
       delete profile.errors
       const leaderboardCopy = [...props.leaderboard, profile]
       const sortedLeaderboard = leaderboardCopy.sort(
@@ -39,9 +46,13 @@ export const Form = (props) => {
 
       setValues(valuesCopy)
       props.setLeaderboard(sortedLeaderboard)
+      for (let index = 0; index < event.target.length; index++) {
+        if (event.target[index].value) {
+          event.target[index].value = ''
+        }
+      }
     }
   }
-  console.log(props.leaderboard)
   return (
     <>
       <form onSubmit={submitAnswerHandler}>
