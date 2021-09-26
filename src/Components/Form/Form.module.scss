@@ -3,20 +3,24 @@ form {
   justify-content: center;
   align-items: center;
   margin: 60px 0px 0px 0px;
-  .objWeight {
-    height: 30px;
+  .firstName,
+  .lastName,
+  .country,
+  .points {
+    padding: 10px;
+    border: 2px solid #e8cfcc;
+    margin: 0px 5px 0px 0px;
   }
-  .planet {
-    height: 36px;
-    margin: 0px 5px;
+  input:focus {
+    border: 2px solid #ed998b;
+    outline: 0;
   }
   .submitWeightBtn {
-    height: 36px;
-    background-color: grey;
-    color: #fff;
-    width: 120px;
+    background-color: #e5c9c5;
+    padding: 10px 35px;
     border: 0;
-    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    color: #fff;
   }
 }
