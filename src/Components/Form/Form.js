@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ErrorCard from '../ErrorCard'
-import AnswerCard from '../AnswerCard'
+import AnswerCard from '../Leaderboard'
 import classes from './Form.module.scss'
 export const Form = (props) => {
   const [values, setValues] = useState({

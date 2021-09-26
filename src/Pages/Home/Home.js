@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from '../../Components/Form'
 import Header from '../../Components/Header'
+import Leaderboard from '../../Components/Leaderboard'
 import classes from './Home.module.scss'
 
 export const Home = () => {
@@ -15,6 +16,7 @@ export const Home = () => {
     */}
       <Header />
       <Form leaderboard={leaderboard} setLeaderboard={setLeaderboard} />
+      <Leaderboard leaderboard={leaderboard} setLeaderboard={setLeaderboard} />
     </div>
   )
 }
